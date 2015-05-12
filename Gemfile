@@ -29,6 +29,9 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-twitter'
 
+gem 'nokogiri'
+gem 'mechanize'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
