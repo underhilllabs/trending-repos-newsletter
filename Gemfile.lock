@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/sheharyarn/github-trending.git
+  revision: 8bc1f2beffe214dd52c82c0bf3b555d368740029
+  specs:
+    github-trending (0.2.3)
+      addressable (~> 2.3.6)
+      mechanize (~> 2.7.2)
+      thor (~> 0.19.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,6 +45,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.8)
     arel (6.0.0)
     autoprefixer-rails (5.1.11)
       execjs
@@ -65,7 +75,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    domain_name (0.5.23)
+    domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.5.2)
@@ -198,7 +208,7 @@ GEM
       json (>= 1.8.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.6)
+    unf_ext (0.0.7.1)
     warden (1.2.3)
       rack (>= 1.0)
     web-console (2.1.2)
@@ -216,11 +226,10 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  github-trending!
   jbuilder (~> 2.0)
   jquery-rails
-  mechanize
   mysql2
-  nokogiri
   omniauth
   omniauth-github
   omniauth-twitter

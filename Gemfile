@@ -30,8 +30,8 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-twitter'
 
-gem 'nokogiri'
-gem 'mechanize'
+## gem 'nokogiri'
+## gem 'mechanize'
 
 gem 'github-trending', github: 'sheharyarn/github-trending'
 
