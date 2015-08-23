@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/sheharyarn/github-trending.git
+  remote: git://github.com/underhilllabs/github-trending.git
   revision: 8bc1f2beffe214dd52c82c0bf3b555d368740029
   specs:
     github-trending (0.2.3)
@@ -241,3 +241,6 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.5

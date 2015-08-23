@@ -33,7 +33,7 @@ gem 'omniauth-twitter'
 ## gem 'nokogiri'
 ## gem 'mechanize'
 
-gem 'github-trending', github: 'sheharyarn/github-trending'
+gem 'github-trending', github: 'underhilllabs/github-trending'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
