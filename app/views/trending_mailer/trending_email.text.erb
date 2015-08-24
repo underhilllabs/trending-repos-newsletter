@@ -1,0 +1,15 @@
+<%= @item.period.capitalize %> Trending Repos for <%= @item.repo_language%>
+=====================================================
+
+<% @repos.each do |r| %>
+
+<%= r.name %> received <%= r.star_count %> stars!
+
+<%= r.description %>
+
+----------------------------------------------------
+
+<% end %>
+
+Thanks! See ya next week!
+     

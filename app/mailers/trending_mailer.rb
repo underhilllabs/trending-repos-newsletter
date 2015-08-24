@@ -3,9 +3,9 @@ class TrendingMailer < ApplicationMailer
     @newsletter = newsletter
     @user = user 
     newsletter_items = @newsletter.newsletter_items
-    item = newsletter_items.first
-    @repos = Github::Trending.get(item.repo_language, item.period)
+    @item = newsletter_items.first
+    @repos = Github::Trending.get(@item.repo_language, @item.period)
 
-    mail(to: @user.email, subject: 'Github Weekly Trends')
+    mail(to: @user.email, subject: '#{@item.repo_language.capitalize} Trending Repos')
   end
 end
