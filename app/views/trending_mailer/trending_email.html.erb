@@ -4,11 +4,11 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body
-    <h1><%= @item.period.capitalize %> Trending Repos for <%= @item.repo_language%></h1>
+    <h1 style="font-size:200%">Weekly Trending Repos for <%= @item.repo_language%></h1>
     <hr>
 
     <% @repos.each do |r| %>
-    <p><a href="https://github.com/<%=r.name%>"><%= r.name %></a> received <%=r.star_count%> stars.</p>  
+    <p style="font-size:120%"><a href="https://github.com/<%=r.name%>"><%= r.name %></a> received <%=r.star_count%> stars.</p>  
     <p><%= r.description %></p>  
     <br>
     <% end %>

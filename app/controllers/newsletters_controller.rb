@@ -15,6 +15,15 @@ class NewslettersController < ApplicationController
   end
 
   def create
+    ni = NewsletterItem.new(repo_language: params[:repo_language], period: params[:period])
+    newsletter = Newsletter.new(title: params[:title], user_id: params[:user_id])
+    newsletter.newsletter_items << ni
+    u = User.find(current_user.id)
+    newsletter.save
+    u.newsletters << newsletter
+    u.save 
+    flash[:message] = "Newsletter #{params[:title]} was succesfully created"
+    redirect_to root_url
   end
 
   def destroy
@@ -36,6 +45,10 @@ class NewslettersController < ApplicationController
 
   def set_newsletter
     @newsletter = Newsletter.find(params[:id])
+  end
+
+  def newsletter_params
+    params.require(:newsletter).permit(:title, :user_id)
   end
 end
 
