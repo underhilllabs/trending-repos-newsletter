@@ -1,0 +1,9 @@
+
+    <h3><%= n.title %></h3>
+    <div class="newsletter-items">
+    <%  n.newsletter_items.each do |ni| %>
+      <div>Repo Language: <%= ni.repo_language %></div>
+      <div>Period: <%= ni.period %></div>
+    <% end %>
+    <div><%= n.users.count %> subscribers</div>
+    </div>

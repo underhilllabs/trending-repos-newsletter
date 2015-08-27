@@ -1,0 +1,18 @@
+<h3>Add a newsletter</h3>
+<%=  form_tag("/newsletters", method: "post") do %>
+   <%= label_tag :title , "Newsletter Title" %>
+   <br>
+   <%= text_field_tag :title %>
+   <%= hidden_field_tag :user_id, current_user.id %>
+   <br>
+   <%= label_tag :repo_language, "Repo Language" %>
+   <br>
+   <%= select_tag :repo_language, options_for_select(languages) %>
+   <br>
+   <%= label_tag :period, "Trending Period" %>
+   <br>
+   <%= select_tag :period, options_for_select(["day", "week", "month"]) %>
+   <br>
+   <br>
+   <%= submit_tag "Create Newsletter" %> 
+<% end %>

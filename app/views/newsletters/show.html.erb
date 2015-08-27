@@ -1,0 +1,9 @@
+<h2>Newsletter Details</h2>
+
+<h3>Newsletter Items</h3>
+<% @newsletter.newsletter_items.each do |ni| %>
+<div>
+  <p>Repo Languages: <%= ni.repo_language %></p>
+  <p>Period: <%= ni.period %></p>
+</div>
+<% end %>
