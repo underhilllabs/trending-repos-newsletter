@@ -1,6 +1,6 @@
 class NewslettersController < ApplicationController
   before_action :require_login, only: [:update, :edit]
-  before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
+  before_action :set_newsletter, only: [:show, :edit, :update, :destroy, :subscribe, :unsubscribe]
   respond_to :html
 
   def index
@@ -34,6 +34,21 @@ class NewslettersController < ApplicationController
 
   def edit
   end
+
+  def subscribe
+    u = User.find(params[:user_id])
+    u.newsletters << @newsletter
+    u.save
+    redirect_to root_url
+  end
+
+  def unsubscribe
+    u = User.find(params[:user_id])
+    u.newsletters.delete(@newsletter)
+    u.save
+    redirect_to root_url
+  end
+
 
   private
   def require_login

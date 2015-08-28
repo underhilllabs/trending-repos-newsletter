@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   default_url_options :host => "gh.scrumple.net"
   devise_for :users
-  root 'welcome#index'
+  root 'newsletters#index'
+  resources :newsletters
+
+  post "newsletters/subscribe" => "newsletters#subscribe"
+  post "newsletters/unsubscribe" => "newsletters#unsubscribe"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

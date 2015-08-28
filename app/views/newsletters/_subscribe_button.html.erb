@@ -1,0 +1,14 @@
+<% if n.users.include? current_user %>
+  You are subscribed. <br>
+  <%= form_tag("/newsletters/unsubscribe", action: "post") do %>
+    <input type=hidden name=id value="<%= n.id %>">
+    <input type=hidden name=user_id value="<%= current_user.id %>">
+    <input type="submit" class="btn btn-danger unsubscribe" value="Unsubscribe">
+  <% end %>
+<% else %>
+  <%= form_tag("/newsletters/subscribe", action: "post") do %>
+    <input type=hidden name=id value="<%= n.id %>">
+    <input type=hidden name=user_id value="<%= current_user.id %>">
+    <input type="submit" class="btn btn-primary subscribe" value="Subscribe Now">
+  <% end %>
+<% end %>
