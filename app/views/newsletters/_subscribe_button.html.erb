@@ -9,6 +9,13 @@
   <%= form_tag("/newsletters/subscribe", action: "post") do %>
     <input type=hidden name=id value="<%= n.id %>">
     <input type=hidden name=user_id value="<%= current_user.id %>">
-    <input type="submit" class="btn btn-primary subscribe" value="Subscribe Now">
+    <input type="submit" class="btn btn-primary subscribe" value="Subscribe">
   <% end %>
 <% end %>
+<p>
+  <%= form_tag("/newsletters/send_current", action: "post") do %>
+    <input type=hidden name=id value="<%= n.id %>">
+    <input type=hidden name=user_id value="<%= current_user.id %>">
+    <input type="submit" class="btn btn-primary subscribe" value="Send Me Current Newsletter">
+  <% end %>
+</p>

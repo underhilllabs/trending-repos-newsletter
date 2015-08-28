@@ -1,6 +1,6 @@
 class NewslettersController < ApplicationController
   before_action :require_login, only: [:update, :edit]
-  before_action :set_newsletter, only: [:show, :edit, :update, :destroy, :subscribe, :unsubscribe]
+  before_action :set_newsletter, only: [:show, :edit, :update, :destroy, :subscribe, :unsubscribe, :send_current]
   respond_to :html
 
   def index
@@ -22,7 +22,7 @@ class NewslettersController < ApplicationController
     newsletter.save
     u.newsletters << newsletter
     u.save 
-    flash[:message] = "Newsletter #{params[:title]} was succesfully created"
+    flash[:info] = "Newsletter #{params[:title]} was succesfully created"
     redirect_to root_url
   end
 
@@ -33,6 +33,13 @@ class NewslettersController < ApplicationController
   end
 
   def edit
+  end
+
+  def send_current
+    u = User.find(params[:user_id])
+    TrendingMailer.trending_email(@newsletter, u).deliver_later
+    flash[:info] = "Newsletter queued for delivery."
+    redirect_to root_url
   end
 
   def subscribe

@@ -5,5 +5,5 @@
   <div>Period: <%= ni.period %></div>
 <% end %>
 <div><%= n.users.count %> subscribers</div>
-<%= render partial: 'subscribe_button', locals: {n: n} %>
+<%= render partial: 'subscribe_button', locals: {n: n} if current_user %>
 </div>
