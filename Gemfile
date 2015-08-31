@@ -34,6 +34,7 @@ gem 'omniauth-twitter'
 ## gem 'mechanize'
 
 gem 'github-trending', github: 'underhilllabs/github-trending'
+gem 'resque'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
