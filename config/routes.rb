@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'newsletters#index'
   resources :newsletters
 
+  post "newsletters/send_current" => "newsletters#send_current"
   post "newsletters/subscribe" => "newsletters#subscribe"
   post "newsletters/unsubscribe" => "newsletters#unsubscribe"
   # The priority is based upon order of creation: first created -> highest priority.
