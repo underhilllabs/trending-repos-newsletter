@@ -4,6 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :newsletter
-  has_many :repos, through: :newsletter
+  has_and_belongs_to_many :newsletters
 end
