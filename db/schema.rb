@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150824052444) do
+ActiveRecord::Schema.define(version: 20150826045611) do
 
   create_table "newsletter_items", force: :cascade do |t|
     t.integer  "user_id",       limit: 4
@@ -19,12 +19,14 @@ ActiveRecord::Schema.define(version: 20150824052444) do
     t.string   "period",        limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.integer  "newsletter_id", limit: 4
   end
 
   create_table "newsletters", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "title",      limit: 255
   end
 
   add_index "newsletters", ["user_id"], name: "index_newsletters_on_user_id", using: :btree
