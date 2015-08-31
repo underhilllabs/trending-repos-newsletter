@@ -4,14 +4,15 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body
-    <h1 style="font-size:200%">Weekly Trending Repos for <%= @item.repo_language%></h1>
-    <hr>
 
-    <% @repos.each do |r| %>
-    <p style="font-size:120%"><a href="https://github.com/<%=r.name%>"><%= r.name %></a> received <%=r.star_count%> stars.</p>  
-    <p><%= r.description %></p>  
+  <h1 style='font-size:200%'>Weekly Trending Repos for <%= @item.repo_language%></h1>
+
+  <% @repos.each do |r| %>
+    <p style='font-size:16px'><a href="https://github.com/<%=r.name%>"><%= r.name %></a></p>  
+    <p style='font-size:12px'><%= r.description %></p>  
+    <p style='font-size:12px;'>received <%=r.star_count%> stars.</p>
     <br>
-    <% end %>
+  <% end %>
      
   </body>
 </html>
