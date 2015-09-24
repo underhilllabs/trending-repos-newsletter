@@ -20,6 +20,10 @@
     <a class="navbar-brand" href="/">Trending Repos Weekly</a>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
+      <% if current_user %>
+        <li><a class="xxnavbar-brand" href="/newsletters/new">Create Newsletter</a></li>
+        <li><a class="xxnavbar-brand" href="/newsletters/">View Newsletters</a></li>
+      <% end %>
       </ul>
       <p class="navbar-text pull-right">
         <% if current_user %>
