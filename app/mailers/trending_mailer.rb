@@ -6,7 +6,7 @@ class TrendingMailer < ApplicationMailer
     @item = newsletter_items.first
     @repos = Github::Trending.get(@item.repo_language, @item.period)
     # set default language for newsletter title if it isn't set
-    @item.repo_language ||= "All Languages"
+    @item.repo_language = "All Languages" if @item.repo_language.blank?
 
     mail(to: @user.email, subject: "#{@item.repo_language.capitalize} Trending Repos")
   end
