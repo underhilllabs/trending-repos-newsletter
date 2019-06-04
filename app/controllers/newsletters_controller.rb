@@ -16,7 +16,7 @@ class NewslettersController < ApplicationController
 
   def create
     ni = NewsletterItem.new(repo_language: params[:repo_language], period: params[:period])
-    newsletter = Newsletter.new(title: params[:title], user_id: params[:user_id])
+    newsletter = Newsletter.new(title: params[:title], user_id: params[:user_id], repo_language: params[:repo_language])
     newsletter.newsletter_items << ni
     u = User.find(current_user.id)
     newsletter.save
@@ -37,6 +37,7 @@ class NewslettersController < ApplicationController
 
   def send_current
     u = User.find(params[:user_id])
+    @newsletter = Newsletter.find(params[:id])
     TrendingMailer.trending_email(@newsletter, u).deliver_later
     flash[:info] = "Newsletter queued for delivery."
     redirect_to root_url
@@ -44,8 +45,11 @@ class NewslettersController < ApplicationController
 
   def subscribe
     u = User.find(params[:user_id])
+    @newsletter = Newsletter.find(params[:id])
     u.newsletters << @newsletter
     u.save
+    logger.warn "Subscription to newsletter #{@newsletter.id} set for #{u.id}"
+    flash[:info] = "Subscription successfully added to your account."
     redirect_to root_url
   end
 
