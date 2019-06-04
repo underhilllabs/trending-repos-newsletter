@@ -7,7 +7,7 @@ gem 'rails', '5.2.3'
 gem 'sqlite3'
 gem 'mysql2'
 # Use SCSS for stylesheets
-gem 'bootstrap-sass', '~> 3.3.4'
+gem "bootstrap-sass", ">= 3.4.1"
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -26,9 +26,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
-gem 'omniauth'
-gem 'omniauth-github'
-gem 'omniauth-twitter'
+#gem 'omniauth'
+#gem 'omniauth-github'
+#gem 'omniauth-twitter'
 
 ## gem 'nokogiri'
 ## gem 'mechanize'
