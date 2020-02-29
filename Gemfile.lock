@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/underhilllabs/github-trending.git
+  remote: https://github.com/underhilllabs/github-trending.git
   revision: 8bc1f2beffe214dd52c82c0bf3b555d368740029
   specs:
     github-trending (0.2.3)
@@ -80,7 +80,7 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    domain_name (0.5.20180417)
+    domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.8.0)
     execjs (2.7.0)
@@ -119,9 +119,9 @@ GEM
       ntlm-http (~> 0.1, >= 0.1.1)
       webrobots (>= 0.0.9, < 0.2)
     method_source (0.9.2)
-    mime-types (3.2.2)
+    mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2019.0331)
+    mime-types-data (3.2019.1009)
     mimemagic (0.3.3)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
@@ -131,7 +131,7 @@ GEM
     mustermann (1.0.3)
     mysql2 (0.5.2)
     net-http-digest_auth (1.4.1)
-    net-http-persistent (3.0.1)
+    net-http-persistent (3.1.0)
       connection_pool (~> 2.2)
     nio4r (2.3.1)
     nokogiri (1.10.3)
@@ -167,7 +167,7 @@ GEM
       method_source
       rake (>= 0.8.7)
       thor (>= 0.19.0, < 2.0)
-    rake (12.3.2)
+    rake (13.0.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
